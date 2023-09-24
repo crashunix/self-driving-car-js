@@ -80,19 +80,17 @@ class Sensor {
                 let end = this.rays[i][1];
                 if(this.readings[i]) {
                     end = this.readings[i];
+
+                    const squareSize = 10; // Tamanho do quadrado
+                    ctx.strokeStyle = "green";
+                    ctx.lineWidth = 1;
+                    ctx.strokeRect(end.x - squareSize / 2, end.y - squareSize / 2, squareSize, squareSize);
                 }
 
                 ctx.beginPath();
-                ctx.lineWidth = 2;
-                ctx.strokeStyle = "yellow";
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = "green";
                 ctx.moveTo(this.rays[i][0].x, this.rays[i][0].y);
-                ctx.lineTo(end.x, end.y);
-                ctx.stroke();
-
-                ctx.beginPath();
-                ctx.lineWidth = 2;
-                ctx.strokeStyle = "purple";
-                ctx.moveTo(this.rays[i][1].x, this.rays[i][1].y);
                 ctx.lineTo(end.x, end.y);
                 ctx.stroke();
             }

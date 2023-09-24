@@ -18,28 +18,29 @@ if(localStorage.getItem("bestBrain")) {
     for(let i = 0; i < cars.length; i++) {
         cars[i].brain = JSON.parse(localStorage.getItem("bestBrain"));
         if(i != 0) {
-            NeuralNetwork.mutate(cars[i].brain, 0.03);
+            NeuralNetwork.mutate(cars[i].brain, 0.1);
         }
     }
+    bestCar.color = "orange";
 }
 
 const traffic = [
-    new Car(road.getLaneCenter(1), -100, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(0), -300, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(2), -300, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(1), -400, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(0), -500, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(2), -500, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(1), -600, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(0), -700, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(2), -700, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(1), -800, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(1), -900, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(1), -1000, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(0), -1200, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(1), -1240, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(1), -1360, 30, 50, "DUMMY", 2),
-    new Car(road.getLaneCenter(2), -1360, 30, 50, "DUMMY", 2),
+    new Car(road.getLaneCenter(1), -100, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(0), -300, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(2), -300, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(1), -400, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(0), -500, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(2), -500, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(1), -600, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(0), -700, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(2), -700, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(1), -800, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(1), -900, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(1), -1000, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(0), -1200, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(1), -1240, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(1), -1550, 30, 50, "DUMMY", 2, "red"),
+    new Car(road.getLaneCenter(2), -1450, 30, 50, "DUMMY", 2, "red"),
     // new Car(road.getLaneCenter(1), -1900, 30, 50, "DUMMY", 2),
     // new Car(road.getLaneCenter(2), -1900, 30, 50, "DUMMY", 2),
 
@@ -99,14 +100,14 @@ function animate(time) {
     road.draw(carCtx);
 
     for(let i = 0; i < traffic.length; i++) {
-        traffic[i].draw(carCtx, "red");
+        traffic[i].draw(carCtx);
     }
     carCtx.globalAlpha = 0.2;
     for(let i = 0; i < cars.length; i++) {
-        cars[i].draw(carCtx, "blue");
+        cars[i].draw(carCtx);
     }
     carCtx.globalAlpha = 1;
-    bestCar.draw(carCtx, "blue", true);
+    bestCar.draw(carCtx, true);
 
     carCtx.restore();
 
