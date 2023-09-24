@@ -6,7 +6,7 @@ Este é um projeto de estudo de inteligência artificial implementado em JavaScr
 
 Os dados de treinamento usados para alimentar a rede neural são fornecidos no formato JSON, contendo informações sobre os níveis da rede neural, incluindo pesos, biases e outras configurações. Um exemplo dos dados de treinamento é fornecido abaixo:
 
-```json
+```
 {
   "levels": [
     {
