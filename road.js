@@ -40,6 +40,7 @@ class Road {
             ctx.beginPath();
             ctx.moveTo(x, this.top);
             ctx.lineTo(x, this.bottom);
+            ctx.strokeStyle = "white";
             ctx.stroke();
         }
         
@@ -48,6 +49,7 @@ class Road {
             ctx.beginPath();
             ctx.moveTo(border[0].x, border[0].y);
             ctx.lineTo(border[1].x, border[1].y);
+            ctx.strokeStyle = "gray";
             ctx.stroke();
         });
 
